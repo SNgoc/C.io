@@ -1,0 +1,75 @@
+Để khai báo và gán giá trị cho biến kiểu số thực bạn bạn dùng từ khóa double
+Để hiển thị một số thực ra màn hình bạn dùng hàm printf() với định dạng %f
+
+Kiểu ký tự trong C là kiểu dữ liệu chỉ lưu trữ được 1 ký tự trong bảng mã ASCII, ký tự này có thể là một chữ cái (a, b, c, ... x, y, z), 
+một chữ số  (0, 1, 2,..., 9), một phép toán (+, -, *, /) hay một ký tự bất kỳ khác (!, &, ...).
+
+Biến kiểu ký tự được khai báo bằng từ khóa char (char là viết tắt của character), để hiển thị biến kiểu ký tự bạn dùng định dạng %c
+Ví dụ chương trình tạo và hiển thị biến kiểu ký tự:
+
+#include<stdio.h>
+
+int main() {
+	// Khai báo biến c kiểu ký tự và gán trị cho c = 'a'
+	char c = 'a';
+	// Hiển thị biến c ra màn hình
+	printf("%c", c);
+	return 0;
+}
+
+
+
+Trong ngôn ngữ lập trình C có các kiểu dữ liệu lưu trữ số nguyên như: short, int, long, long long...
+
+Sự khác biệt giữa các kiểu dữ liệu này là miền giá trị:
+
+Miền giá trị của kiểu short là từ -32768 tới 32767.
+
+Miền giá trị của kiểu int là từ -2147483648 tới 2147483647.
+
+Miền giá trị của kiểu long là từ -2147483647 tới 2147483647 (giống với miền dữ liệu của kiểu int).
+
+Miền giá trị của kiểu long long là từ -9223372036854775808 tới 9223372036854775807.
+
+Có thể thấy miền giá trị của kiểu long long là lớn nhất, do đó bạn có thể dùng kiểu dữ liệu này để thay cho các kiểu dữ liệu khác 
+nhưng bù lại dùng kiểu dữ liệu này sẽ tốn bộ nhớ hơn (kiểu dữ liệu có miền giá trị càng lớn sẽ càng tốn bộ nhớ). 
+Do đó bạn cần sử dụng các kiểu dữ liệu một cách hợp lý, 
+ví dụ biến để lưu trữ số học sinh trong một lớp học nên là kiểu short vì thường một lớp chỉ có vài chục học sinh.
+
+Lưu ý: Miền giá trị của các kiểu dữ liệu còn phụ thuộc vào yếu tố khác nhưng thường sẽ giống như trên.
+
+Quay lại bài này, bạn không thể dùng kiểu int để lưu giá trị cho biến a và b do kết quả của phép nhân 2 số kiểu int sẽ là 1 số kiểu int 
+mà miền giá trị của kiểu int là không đủ để lưu trữ kết quả của phép nhân 384847522 * 988347273. Ví dụ chương trình:
+
+#include<stdio.h>
+
+int main() {
+    int a = 384847522;
+    int b = 988347273;
+    printf("%d", a * b);
+    return 0;
+}
+Sẽ cho ra kết quả:
+
+-628954446
+Có thể thấy kết quả này là sai hoàn toàn, bạn cần dùng kiểu dữ liệu long long cho biến a và biến b. 
+Để hiển thị biến kiểu long long ra màn hình bạn cần dùng hàm printf() với định dạng %lld.
+Dùng kiểu long long thay vì int cho biến a và biến b.
+Hoặc nếu bạn muốn dùng kiểu int cho biến a và biến b thì có thể làm như sau:
+#include<stdio.h>
+
+int main() {
+    int a = 384847522;
+    int b = 988347273;
+    /* 
+    Mặc định kết quả của phép nhân 2 số kiểu int 
+    sẽ là một số kiểu int nên bạn cần dùng câu lệnh (long long) 
+    để báo rằng kết quả của phép nhân này là một số kiểu long long
+    */
+    printf("%lld", (long long)a * b);
+    return 0;
+}
+
+
+
+

@@ -1,0 +1,57 @@
+
+Để sử dụng hàm gets() cho string không bị lỗi tràn ký tự khi nhập quá số ký tự quy định, sử dụng %s để giới hạn ký tự khi output 1 string.
+VD: %.10s sẽ giới hạn số ký tự trong string khi output là 10.
+
+
+Để nhập dữ liệu cho biến kiểu số nguyên bạn có thể dùng hàm scanf() với định dạng %d. Ví dụ chương trình sau:
+
+#include<stdio.h>
+
+int main() {
+    // Khai báo biến a kiểu số nguyên
+    int a;
+    // Nhập dữ liệu cho biến a từ bàn phím
+    scanf("%d", &a);
+    // Hiển thị
+    printf("a = %d", a);
+    return 0;
+}
+Sau khi chạy nếu bạn nhập: 77
+Và bấm phím Enter thì chương trình sẽ hiển thị lên màn hình: a = 77
+
+Để lấy phần dư của một phép chia bạn có thể sử dụng toán tử %.
+
+
+Để nhập dữ liệu cho biến kiểu số thực (double) bạn dùng hàm scanf với định dạng %lf. 
+Ví dụ chương trình nhập và tính tích 2 số thực:
+
+#include<stdio.h>
+
+int main() {
+	double a, b;
+	// Dùng định dạng %lf để nhập dữ liệu cho biến kiểu số thực
+	scanf("%lf%lf", &a, &b);
+	printf("a * b = %f", a * b);
+	return 0;
+}
+
+
+
+Bạn hãy viết chương trình nhập vào một ký tự từ bàn phím và thực hiện hiển thị ký tự tiếp trong bảng bảng chữ cái của ký tự đó ra màn hình.
+
+Ví dụ nếu bạn nhập: c
+thì chương trình sẽ hiển thị ra: d
+Giải thích: 'd' là ký tự tiếp theo của 'c' trong bảng chữ cái.
+Hướng dẫn
+Như đã được học ở phần Variable Bạn có thể hiển thị ký tự tiếp theo của 1 ký tự bằng cách cộng ký tự đó với 1.
+Code mẫu:
+
+#include<stdio.h>
+
+int main() {
+	char c;
+	scanf("%c", &c);
+	c = c + 1;
+	printf("%c", c);
+	return 0;
+}

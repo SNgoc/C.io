@@ -1,0 +1,58 @@
+Cấu trúc của lệnh switch case:
+
+	switch (x) {
+	case giá_trị_1:
+		// Nếu x có giá trị bằng giá_trị_1 thì đoạn code trong khối lệnh này sẽ được thực thi
+		break;
+	case giá_trị_2:
+		// Nếu x có giá trị bằng giá_trị_2 thì đoạn code trong khối lệnh này sẽ được thực thi
+		break;
+	case giá_trị_3:
+		// Nếu x có giá trị bằng giá_trị_3 thì đoạn code trong khối lệnh này sẽ được thực thi
+		break;
+	...
+	case giá_trị_n:
+		// Nếu x có giá trị bằng giá_trị_n thì đoạn code trong khối lệnh này sẽ được thực thi
+		break;
+	default:
+		/* 
+		Nếu x không bằng giá trị nào trong các giá trị trên 
+		thì code trong khối lệnh này sẽ được thực thi
+		*/
+		break;
+	}
+Ví dụ về chương trình nhập vào một số từ 1 tới 7 và hiển thị ngày trong tuần tương ứng với số đó:
+
+#include<stdio.h>
+
+int main() {
+	int n;
+	scanf("%d", &n);
+	switch (n) {
+	case 1:
+		printf("Monday");
+		break;
+	case 2:
+		printf("Tuesday");
+		break;
+	case 3:
+		printf("Wednesday");
+		break;
+	case 4:
+		printf("Thursday");
+		break;
+	case 5:
+		printf("Friday");
+		break;
+	case 6:
+		printf("Saturday");
+		break;
+	case 7:
+		printf("Sunday");
+		break;
+	default:
+		printf("Invalid input! Please enter week number between 1-7");
+	}
+	return 0;
+}
+Lưu ý: Biến hoặc biểu thức bên trong lệnh switch phải là một số nguyên và giá trị trong các lệnh case phải là một hằng số.

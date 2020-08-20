@@ -1,0 +1,94 @@
+Bạn hãy viết chương trình nhập vào từ bàn phím 10 số nguyên và hiển thị ra tổng của 10 số này.
+Ví dụ nếu nhập:
+2 7 6 3 4 8 9 7 6 10
+Thì màn hình sẽ hiển thị:
+62
+
+LÝ THUYẾT
+Bài này có thể làm bằng cách thông thường là tạo ra 10 biến như sau:
+
+#include<stdio.h>
+
+int main() {
+    int a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
+    scanf("%d%d%d%d%d%d%d%d%d%d", &a0, &a1, &a2, &a3, &a4, &a5, &a6, &a7, &a8, &a9);
+    printf("%d", a0 + a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9);
+    return 0;
+}
+Có thể thấy cách làm này không được hay, bạn phải tạo ra rất nhiều biến. 
+Nếu chương trình yêu cầu nhập 100 số nguyên thì bạn cũng phải tạo ra 100 biến. 
+Rất may là vấn đề này có thể giải quyết bằng mảng.
+Mảng được hiểu đơn giản là một tập hợp các biến. Ví dụ bài này nếu làm bằng mảng thì sẽ như sau:
+
+#include<stdio.h>
+
+int main() {
+    // Khai báo mảng a kiểu số nguyên với 10 phần tử
+    int a[10];
+    // Khai báo biến lưu trữ tổng các phần tử trong mảng
+    int sum = 0;
+    // Dùng vòng for để nhập dữ liệu cho các phần tử trong mảng
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &a[i]);
+    }
+    // Dùng vòng for để tính tổng các phần tử trong mảng
+    for (int i = 0; i < 10; i++) {
+        sum += a[i];
+    }
+    // In ra tổng các phần tử trong mảng
+    printf("%d", sum);
+    return 0;
+}
+Có thể thấy thay vì tạo ra 10 biến thì bạn chỉ cần tạo ra 1 mảng với 10 phần tử. 
+Thay vì nhập dữ liệu và tính tổng trên từng biến thì bạn nhập dữ liệu và tính tổng trên từng phần tử của mảng.
+Các phần tử của mảng được truy xuất bằng toán tử []. Ví dụ:
+
+a[0] tương đương với phần tử thứ nhất.
+a[1] tương đương với phần tử thứ hai.
+...
+Nhìn chung cách làm bài này với mảng cũng giống việc tạo ra nhiều biến, 
+chỉ khác ở chỗ thay vì phải viết a0, a1, a2, ..., a9 thì bạn có thể dùng vòng lặp for và viết là a[i].
+
+Ngoài ra bạn còn có thể khai báo và khởi tạo giá trị cho mảng bằng 1 số cách dưới đây:
+
+// Khai báo mảng a 5 phần tử với giá trị từ 1 tới 5
+int a[5] = {1, 2, 3, 4, 5};
+// Khai báo mảng a 5 phần tử với giá trị từ 1 tới 5
+int a[] = { 1, 2, 3, 4, 5 };
+// Khai báo mảng a 20 phần tử và gán giá trị cho 5 phần tử đầu tiên
+int a[20] = { 1, 2, 3, 4, 5 };
+
+
+
+BÀI TẬP MẪU:
+Cho một mảng các số nguyên n phần tử arr được nhập từ bàn phím. Bạn hãy viết chương trình hiển thị ra tổng của phần tử đầu tiên và cuối cùng trong mảng arr. Ví dụ nếu bạn nhập n = 5, arr = [2, 7, 6, 8, 9] như bên dưới:
+
+5
+2 7 6 8 9
+Thì màn hình sẽ hiển thị:
+
+11
+Nếu bạn chưa làm được bài này thì có thể xem hướng dẫn ở bên dưới.
+
+HƯỚNG DẪN
+arr[0] + arr[n - 1] chính là tổng của phần tử đầu tiên và cuối cùng.
+
+Code mẫu:
+
+#include<stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[1000];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("%d", arr[0] + arr[n - 1]);
+    return 0;
+}
+
+
+KHAI BÁO MẢNG VỚI NHIỀU PHẦN TỬ LÀ STRING:
+Syntax:
+char *menu_list[] = {"Boiled egg", "Corn flakes", "Gobi 65", "Chicken 65", "Basandi"};

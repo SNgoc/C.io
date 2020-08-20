@@ -1,0 +1,68 @@
+Vòng lặp được hiểu đơn giản là lặp lại 1 đoạn code. 
+
+VD VÒNG LẶP FOR:
+for (int i = 1; i <= 5; i++) {
+	printf("%d ", i);
+}
+Sẽ hoạt động theo thứ tự như sau:
+
+Bước 1. Tạo ra biến i kiểu nguyên và gán giá trị cho i = 1
+
+Bước 2. Nếu i <= 5 thì thì thực hiện đoạn code bên trong dấu { và } (đoạn code này chính là printf("%d ", i);). 
+Ngược lại nếu i > 5 thì dừng không chạy tiếp bước 3.
+
+Bước 3. Tăng i lên 1 đơn vị và quay lại bước 2 (i++ tương đương với i = i + 1 hoặc i += 1).
+
+
+CÂU LỆNH break: là câu lệnh dùng để dừng một vòng lặp.
+CÂU LỆNH continue trong vòng lặp: các đoạn code bên dưới câu lệnh này sẽ không được thực thi.
+Ví dụ chương trình hiển thị các số chẵn từ 1 tới 100 sử dụng câu lệnh continue:
+
+#include<stdio.h>
+int main() {
+    for (int i = 1; i <= 100; i++) {
+        if (i % 2 != 0) {
+            continue;
+        }
+        printf("%d ", i);
+    }
+    return 0;
+}
+Trong đoạn code trên khi câu lệnh continue được thực thi 
+thì câu lệnh printf("%d ", i); sẽ không được thực thi (do câu lệnh này nằm dưới câu lệnh continue).
+Bạn cũng có thể dùng câu lệnh continue với vòng lặp while.
+
+
+CẤU TRÚC VÒNG LẶP DO-WHILE:
+
+do {
+	// Khối lệnh
+} while (biểu_thức);
+
+Đầu tiên khối lệnh bên trong vòng lặp do-while sẽ được thực thi trước. 
+Sau đó vòng lặp do-while sẽ kiểm tra biểu thức điều kiện, 
+nếu biểu thức điều kiện đúng thì chương trình sẽ tiếp tục thực thi khối lệnh trong do-while, 
+ngược lại nếu biểu thức điều kiện sai thì dừng vòng lặp.
+
+Vòng lặp do-while khác vòng lặp while ở chỗ vòng lặp while sẽ kiểm tra điều kiện trước, 
+còn vòng lặp do-while sẽ thực hiện khối lệnh trước nên khối lệnh trong do-while sẽ được thực thi ít nhất 1 lần.
+
+Ví dụ về sự khác nhau giữa 2 vòng lặp:
+
+#include<stdio.h>
+
+int main() {
+	int i = 1;
+	do {
+		printf("do-while");
+	} while (i < 1);
+
+	while (i < 1) {
+		printf("while");
+	}
+	return 0;
+}
+Chương trình trên sẽ hiển thị ra:
+
+do-while
+LƯU Ý: Vòng lặp do-while kết thúc bằng dấu chấm phẩy.

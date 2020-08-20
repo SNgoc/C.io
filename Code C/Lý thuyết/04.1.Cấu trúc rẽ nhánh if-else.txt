@@ -1,0 +1,42 @@
+Mệnh đề if:
+
+Mệnh đề if được dùng để kiểm tra một biểu thức điều kiện có đúng hay không,
+nếu đúng thì các câu lệnh bên trong mệnh đề if sẽ được thực thi. 
+Ví dụ để kiểm tra xem n có chia hết cho 2 không bạn có thể làm như sau:
+
+if (n % 2 == 0) {
+	// Nếu n chia hết cho 2 thì hiển thị n is an even number
+	printf("n is an even number");
+}
+if (n % 2 != 0) {
+	// Nếu n không chia hết cho 2 thì hiển thị n is an odd number
+	printf("n is an odd number");
+}
+
+Trong ngôn ngữ lập trình C, == là toán tử kiểm tra xem 2 giá trị có bằng nhau không, 
+!= là toán tử kiểm tra xem 2 giá trị có khác nhau không. 
+Như ở ví dụ trên 
+if (n % 2 == 0) là câu lệnh kiểm tra xem n chia dư cho 2 có bằng 0 không, 
+if (n % 2 != 0) là câu lệnh kiểm tra xem n chia dư cho 2 có khác 0 không.
+
+Lưu ý: Một số bạn hay nhầm giữa toán tử = và toán tử ==, 
+toán tử = là toán tử gán giá trị chứ không phải toán tử so sánh 
+nên nếu bạn dùng toán tử = để so sánh thì chương trình sẽ cho ra kết quả sai.
+
+Mệnh đề if-else:
+
+Tương tự như mệnh đề if nhưng nếu biểu thức điều kiện trong if sai thì đoạn code bên trong else sẽ được thực thi:
+
+if (n % 2 == 0) {
+	// Nếu n chia hết cho 2 thì hiển thị n is an even number
+	printf("n is an even number");
+} else {
+	// Ngược lại (n không chia hết cho 2) thì hiển thị n is an odd number
+	printf("n is an odd number");
+}
+
+
+Ngược với toán tử &&, toán tử || dùng để kiểm tra xem một trong các biểu thức có đúng không, 
+nếu có thì đoạn code bên trong mệnh đề if sẽ được thực thi 
+(với toán tử && thì tất cả các biểu thức phải đúng thì code bên trong mệnh đề if mới được thực thi,
+hiểu đơn giản hơn thì || là toán tử hoặc còn && là toán tử và).

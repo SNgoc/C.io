@@ -1,0 +1,68 @@
+There are 2types of data types
+1.primitive data types
+       *int
+       *float
+       *char
+       *double
+       *long double
+2.user define data types
+         *stack
+          *queue
+           *tree  
+           *structure 
+            *union
+
+Escape sequences begin with a backslash \:
+\n new line
+\t horizontal tab
+\\ backslash
+\b backspace
+\' single quote
+\" double quote
+
+
+The % Format Specifiers
+
+The % specifiers that you can use in ANSI C are:
+
+Usual variable type Display
+
+%c char single character
+
+%d (%i) int signed integer
+
+%e (%E) float or double exponential format
+
+
+%f float or double signed decimal
+
+printf("%3.2f", 4.4289743);
+3 = total number of characters include space decimal everything (khoảng cách giữa dữ liệu xuất với Output  Vd: %15.2f -> Output:     3.13
+2 = number of letters after decimal 
+f = float used for decimal numbers
+
+
+%g (%G) float or double use %f or %e as required
+
+%o int unsigned octal value
+
+%p pointer address stored in pointer
+
+%s array of char sequence of characters
+
+%u int unsigned decimal
+
+%x (%X) int unsigned hex value
+
+
+signed are negative, 0 and positive bits(2^-32....2°... 2^32)
+unsigned are 0 and positive(2°... 2^64)
+
+INPUT/OUTPUT
+
+Use fgets/fputs instead of gets & puts to avoid overflow.
+Syntax for fgets & fputs :- 
+fgets/fputs(variable , size of array , input/output).
+For the above ex:-
+fgets(a,100,stdin);
+Here stdin stands for standard input. Same for fputs
