@@ -1,47 +1,37 @@
-//BT lab 4
-//Viet chuong trinh nhap so nguyen co 3 chu so, in ra cach doc cua so nay
+/*Nhap chuoi
+Vong lap chay tren chuoi, dung ham strlen(chuoi) de ktra dieu kien thoat
+cho bien dem (dem chu nguyen am) = 0
+trong vong lap, lay ky tu, chay cu phap switch..case 'a','e','o','i','u' tang bien dem
+Het vong lap in ra bien dem
+*/
 #include<stdio.h>
 #include<conio.h>
-#include<stdlib.h>
-int main() {
-	int num,i;
+#include<string.h>
+int main()
+{
+	int i;
+	int demWo = 0;
+	char str[15];
 	char ch;
-	char *tram[] = {"", "mot tram","hai tram","ba tram","bon tram","nam tram","sau tram","bay tram","tam tram","chin tram"};
-	char *donvi[] = {"", "mot", "hai","ba", "bon","nam", "sau", "bay","tam","chin"};
-	char *chuc[] = {"", "le","muoi", "hai muoi","ba muoi", "bon muoi","nam muoi", "sau muoi", "bay muoi","tam muoi","chin muoi"};
-	for (i = 0; i >= 0; i++) {
-		printf("Nhap so nguyen 3 chu so:");
-		scanf("%d",&num);
+	while(1>0)
+	{
+		demWo = 0;
+		printf("Enter a string to count vowel (Nhap vao 1 so nguyen am): ");
+		scanf("%s",str);
 		fflush(stdin);
-		int x,y,z;// bien dung de truy xuat phan tu: x la tram, y la chuc, z la don vi
-		if (num % 100 == 0) {// truong hop so chia het cho 100
-			x = num/100;
-			y = 0; z = 0;
+		for (i = 0; i < strlen(str); i++)
+		{
+			switch(str[i])
+			{
+				case 'a':
+				case 'e':
+				case 'o':
+				case 'i':
+				case 'u':
+					demWo++;
+					break;
+			}
 		}
-		else if (num % 100 != 0) {// truong hop so khong chia het cho 100
-			x = num/100;
-			y = (num/10)%10;
-				if (y == 0) {// truong hop hang chuc la 0-> 101: doc thanh mot le mot
-					y = 1;
-				}
-				else {
-					y += 1;
-				}
-			z = (num%100)%10;
-		}
-		printf("%d la %s %s %s\n",num,tram[x],chuc[y],donvi[z]);
-		printf("Do you want to continue? Y/N: \n");
-		scanf("%c",&ch);
-		if (ch == 'Y' || ch == 'y'){
-			continue;
-		}
-		else if (ch == 'N' || ch == 'n') {
-			break;
-		}
-		else {
-			printf("Try again!\n");
-			continue;
-		}
-		exit(0);
+		printf("\nNumber of vowels is: %d\n",demWo);
 	}
 }
