@@ -34,5 +34,4 @@ int main()
 		}
 		printf("\nNumber of vowels is: %d\n",demWo);
 	}
-	printf("!!!");
 }
