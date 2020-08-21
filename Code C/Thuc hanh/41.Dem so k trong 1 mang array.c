@@ -15,8 +15,9 @@ int main() {
     	printf("Nhap arr[%d]",i);
         scanf("%d", &arr[i]);
     }
+    printf("List of array:\n");
     for (i = 0; i < n; i++) {//lenh in array
-    	printf("List of array: %d",arr[i]);
+    	printf("%d\t",arr[i]);
 	}
     int count = 0;
     for (i = 0; i < n; i++) {//lenh dem so k
@@ -24,7 +25,7 @@ int main() {
             count++;
         }
     }
-    printf("So k la: %d\n",k);
+    printf("\nSo k la: %d\n",k);
     printf("So lan %d xuat hien trong mang arr la %d",k,count);
     return 0;
 }
