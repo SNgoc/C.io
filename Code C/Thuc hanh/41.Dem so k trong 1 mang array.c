@@ -8,19 +8,23 @@ int main() {
     int arr[1000];
     printf("Enter a size of array:");
     scanf("%d", &n);
-    for (i = 0; i < n; i++) {
+    fflush(stdin);
+    printf("Nhap so k: ");
+    scanf("%d", &k);
+    for (i = 0; i < n; i++) {//nhap phan tu arr
     	printf("Nhap arr[%d]",i);
         scanf("%d", &arr[i]);
     }
-    printf("Nhap so k: ");
-    scanf("%d", &k);
-
+    for (i = 0; i < n; i++) {//lenh in array
+    	printf("List of array: %d",arr[i]);
+	}
     int count = 0;
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {//lenh dem so k
         if (arr[i] == k) {
             count++;
         }
     }
-    printf("So lan so k  xuat hien trong mang arr la %d", count);
+    printf("So k la: %d\n",k);
+    printf("So lan %d xuat hien trong mang arr la %d",k,count);
     return 0;
 }
