@@ -9,24 +9,20 @@ int main()
 {
 	int fibo,a,b;
 	a = 1;
-	a = b;
+	b = a;
 	printf("Enter a num to print Fibonacci: ");
 	scanf("%d",&fibo);
 	fflush(stdin);
 	printf("The Fibonacci series:\n");
 	printf("%d\t%d\t",a,b);
 	int sum,i;
-	for (i=2; 1>0; i++) {
+	for (i=2; i <= fibo; i++) {
 		sum = a+b;
 		if (sum <= fibo) {
 			printf("%d\t",sum);
 			a = b;
 			b = sum;
 		}
-		else {
-			break;
-		}
 	}
 	printf("\nFinished");
-	
 }

@@ -72,7 +72,7 @@ void display()
 void quest1() {
 	int fibo,a,b;
 	a = 1;
-	a = b;
+	b = a;
 	printf("Enter a num to print Fibonacci: ");
 	scanf("%d",&fibo);
 	fflush(stdin);
@@ -155,7 +155,7 @@ int main() {
 	while (0<1) {
 		int cmd;
 		display();
-		printf ("\nEnter an Option:\n"); // them \n sau cau de sua loi bug quest1() khong tinh duoc fibo
+		printf ("\nEnter an Option: ");
 		scanf("%d",&cmd);
 		switch (cmd) {
 			case 1:
