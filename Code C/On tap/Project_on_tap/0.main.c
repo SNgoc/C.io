@@ -7,13 +7,14 @@ int main() {
 	while (0<1) {
 		int cmd;
 		display();
-		printf ("\nEnter an Option:\n"); // them \n sau cau de sua loi bug quest1() khong tinh duoc fibo
+		printf ("\nEnter an Option: ");
+		fflush(stdin);
 		scanf("%d",&cmd);
 		switch (cmd) {
 			case 1:
 				quest1();
 				break;
-			case 2:
+			case 2: 
 				quest2();
 				break;
 			case 3:

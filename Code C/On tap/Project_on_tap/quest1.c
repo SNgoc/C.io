@@ -6,7 +6,7 @@
 void quest1() {
 	int fibo,a,b;
 	a = 1;
-	a = b;
+	b = a;
 	printf("Enter a num to print Fibonacci: ");
 	scanf("%d",&fibo);
 	fflush(stdin);
