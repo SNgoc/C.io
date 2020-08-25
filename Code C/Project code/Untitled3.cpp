@@ -22,8 +22,8 @@ void maxn() {
 	}
 	printf("Max n: %lld\n",max);
 }
-// Ham kieu so thuc
-double bieuthuc(double i) {
+
+double bieuthuc(int i) {
 	double y;
 	y = sqrt(abs(i-1)) + 1/( (pow(i,2) +1));
 	return y;
@@ -34,6 +34,5 @@ int main() {
 	double z;
 	printf("Nhap gia tri z (z != 0): ");
 	scanf("%lf",&z);
-	bieuthuc(z);
-	printf("%f %f",z,bieuthuc(z));
+	printf("%f",bieuthuc(z));
 }
