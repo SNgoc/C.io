@@ -1,22 +1,29 @@
-/*BT 3 Array Assignment C:
-Nhap vao n phan tu cua mang array va dao nguoc vi tri cua cac phan tu trong mang
-*/
+//tim chuoi lon nhat
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
-int main()
-{
-	int n,i;
-	int arr[100],brr[100];
-	char ch;
-	printf("Nhap so phan tu n:");
-	scanf("%d",&n);
-		for (i = 1; i <= n; i++) {
-			printf("Nhap phan tu mang: arr[%d]",i);
-			scanf("%d",&arr[i]);
+int main() {
+	int i,dainhat;
+	char lines[5][20];
+	int longest(char[][20]);
+	for (i=0; i<5; i++) {
+		printf("\nEnter a value of lines[%d]: ",i);
+		scanf("%s",lines[i]);
+	}
+	dainhat = longest(lines);
+	printf("\nThe longest string is %s\n",lines[dainhat]);
+}
+int longest(char arr[][20]) {
+	int i = 0; //chi muc cua mang
+	int long_ctr = 0; // chi muc cua chuoi codo dai dai nhat can tim
+	int prev_len, new_len; // 2 do dai cua cac chuoi de so sanh
+	prev_len = strlen(arr[0]); // dau tien cho bang chuoi thu nhat
+	for (i=1; i<4; i++) {
+		new_len = strlen(arr[i]);
+		if (new_len > prev_len) {
+			long_ctr = i;
+			prev_len = new_len;
 		}
-		for (i = 1; i <= n; i++) {
-			brr[i] = arr[n-i];
-			printf("Mang dao nguoc la: %d\t",brr[i]);
-		}
+	}
+	return long_ctr;
 }
