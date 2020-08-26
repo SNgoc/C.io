@@ -1,29 +1,27 @@
-//tim chuoi lon nhat
+// Code mau Structures
 #include<stdio.h>
 #include<conio.h>
-#include<string.h>
-int main() {
-	int i,dainhat;
-	char lines[5][20];
-	int longest(char[][20]);
-	for (i=0; i<5; i++) {
-		printf("\nEnter a value of lines[%d]: ",i);
-		scanf("%s",lines[i]);
-	}
-	dainhat = longest(lines);
-	printf("\nThe longest string is %s\n",lines[dainhat]);
+int main()
+{
+	struct product {
+		char name[10];
+		int quan;
+		double price;
+	}pro1;
+	void display(struct product);
+	printf("\nEnter a name: ");
+	scanf("%s",pro1.name);
+	printf("\nEnter a quantity: ");
+	scanf("%d",&pro1.quan);
+	printf("\nEnter a price: ");
+	scanf("%lf",&pro1.price);
+	display(pro1);
+	printf("\nFinished\n");
 }
-int longest(char arr[][20]) {
-	int i = 0; //chi muc cua mang
-	int long_ctr = 0; // chi muc cua chuoi codo dai dai nhat can tim
-	int prev_len, new_len; // 2 do dai cua cac chuoi de so sanh
-	prev_len = strlen(arr[0]); // dau tien cho bang chuoi thu nhat
-	for (i=1; i<4; i++) {
-		new_len = strlen(arr[i]);
-		if (new_len > prev_len) {
-			long_ctr = i;
-			prev_len = new_len;
-		}
-	}
-	return long_ctr;
+void display(struct product pd1) 
+{//khai bao mau ham
+	printf("\nInformation of Product 1\n");
+	printf("\nName of product: %s",pd1.name);
+	printf("\nQuantity of product: %d",pd1.quan);
+	printf("\nPrice of product: %.2lf\n",pd1.price);
 }
