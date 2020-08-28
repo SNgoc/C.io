@@ -1,13 +1,15 @@
 // Code mau Structures
 #include<stdio.h>
 #include<conio.h>
-int main()
-{
-	struct product {
+//KHAI BAO HAM struct product ben ngoai ham int main
+struct product { // chuyen cau truc cho ham khac thi phai khai bao ra ngoai ham main()
 		char name[10];
 		int quan;
 		double price;
 	}pro1;
+
+int main()
+{
 	void display(struct product);
 	printf("\nEnter a name: ");
 	scanf("%s",pro1.name);
@@ -18,7 +20,7 @@ int main()
 	display(pro1);
 	printf("\nFinished\n");
 }
-void display(struct product pd1) 
+void display(struct product pd1) //khai bao ham struct product ben ngoai de co the su dung dc pd1
 {//khai bao mau ham
 	printf("\nInformation of Product 1\n");
 	printf("\nName of product: %s",pd1.name);
