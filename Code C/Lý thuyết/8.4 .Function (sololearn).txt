@@ -1,0 +1,38 @@
+Static variables have a local scope but are not destroyed when a function is exited. Therefore, a static variable retains its value for the life of the program and can be accessed every time the function is re-entered.
+A static variable is initialized when declared and requires the prefix static.
+The following program uses a static variable: 
+
+Bản dịch:
+
+Static variables có phạm vi cục bộ nhưng không bị hủy bỏ khi một hàm được thoát. 
+Do đó, một static variable vẫn giữ nguyên giá trị của nó trong suốt thời gian tồn tại của chương trình 
+và có thể được truy cập mỗi khi hàm được nhập lại.
+Một static variable được khởi tạo khi được khai báo và yêu cầu tiền tố tĩnh.Chương trình sau sử dụng một static variable:
+
+#include <stdio.h>
+
+void say_hello();
+
+int main() {    
+  int i;
+
+  for (i = 0; i < 5; i++) {
+    say_hello();
+  }
+   
+  return 0;
+}
+
+void say_hello() {
+  static int num_calls = 1;
+
+  printf("Hello number %d\n", num_calls);
+  num_calls++;
+}
+
+The program output is:
+Hello number 1
+Hello number 2
+Hello number 3
+Hello number 4
+Hello number 5

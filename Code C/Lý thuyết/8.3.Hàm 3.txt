@@ -1,0 +1,77 @@
+LÝ THUYẾT
+
+LƯU Ý: sử dụng double function(double a) để khai báo hàm có giá trị số thực và số input vào cũng là số thực
+
+Ở các bài trước bạn đã biết cách tạo và sử dụng hàm không có giá trị trả về. Hàm không có giá trị trả về được khai báo bằng từ khóa void, 
+các hàm dạng này được sử dụng để thực thi các đoạn code trong thân hàm và không cần lấy ra kết quả sau khi thực thi xong.
+
+Hàm có giá trị trả về khác hàm không có giá trị trả về ở chỗ là các hàm dạng này sau khi thực thi các đoạn code thì sẽ trả về một kết quả. 
+Ví dụ về hàm trả về tổng các số từ 1 tới n:
+
+#include<stdio.h>
+
+// Khai báo hàm sum với kiểu trả về là int và đầu vào là số n
+int sum(int n) {
+	// Biến lưu trữ tổng các số từ 1 tới n
+	int add = 0;
+	// Tính tổng các số từ 1 tới n và lưu vào biến add
+	for (int i = 1; i <= n; i++) {
+		add += i;
+	}
+	// Trả về add (gán kết quả của hàm sum cho add)
+	return add;
+}
+
+int main() {
+	// Hiển thị giá trị của hàm sum với các đầu vào khác nhau ra màn hình
+	printf("%d %d %d", sum(3), sum(4), sum(5));
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+6 10 15
+
+Trong ví dụ trên hàm sum() được khai báo với từ khóa int nên sẽ có kiểu trả về là một số nguyên (kết quả của hàm này là một số nguyên).
+
+Để trả về một kết quả cho hàm bạn dùng câu lệnh return, như ở ví dụ trên thì hàm sum() có gọi tới câu lệnh return add; 
+nên kết quả của hàm sẽ chính là biến add.
+
+Do sum() là hàm có giá trị trả về là một số nguyên nên bạn có thể sử dụng hàm này như sử dụng một số nguyên 
+(bạn có thể gán int a = sum(3); hay printf("%d", sum(3)), ...).
+
+Nếu bạn vẫn chưa quen với hàm có giá trị trả về thì có thể xem tiếp một ví dụ khác đơn giản hơn về hàm trả về tổng 2 số:
+
+#include<stdio.h>
+
+int sum(int a, int b) {
+	return a + b;
+}
+
+int main() {
+	printf("%d %d %d", sum(2, 3), sum(1, 4), sum(3, 7));
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+5 5 10
+Lưu ý: Hàm sẽ kết thúc và trả về giá trị ngay khi gặp câu lệnh return. Xem ví dụ sau để hiểu hơn:
+
+#include<stdio.h>
+
+using namespace std;
+
+int sum(int a, int b) {
+	return 1;
+	return a + b;
+}
+
+int main() {
+	printf("%d %d %d", sum(2, 3), sum(1, 4), sum(3, 7));
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+1
+1
+1
+Đọc tới đây bạn đã biết cách tạo và sử dụng hàm có giá trị trả về, hãy quay lại phần bài tập và làm thử.

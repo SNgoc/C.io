@@ -1,0 +1,54 @@
+LÝ THUYẾT
+
+Bài này sẽ giúp bạn học được cách sử dụng hàm có đầu vào. Trước hết hãy xem ví dụ đơn giản về hàm có đầu vào:
+
+#include<stdio.h>
+
+// Khai báo hàm show với đầu vào là biến name kiểu string
+void show(char name[100]) {
+	// Hiển thị biến name ra màn hình
+	printf("Hello %s", name);
+}
+
+int main() {
+	char name[] = "Codelearn";
+	show(name);
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+Hello Codelearn
+Hàm show() trong ví dụ trên là hàm có đầu vào là 1 mảng các ký tự.
+
+Khi gọi một hàm có đầu vào bạn luôn cần cung cấp giá trị cho các đầu vào của hàm. Để hiểu rõ hơn bạn hãy xem ví dụ khác về hàm hiển thị số lớn nhất trong 3 số đầu vào:
+
+#include<stdio.h>
+
+// Khai báo hàm show với đầu vào là 3 số nguyên a, b, c
+void show(int a, int b, int c) {
+	int maxValue = a;
+	if (maxValue < b) {
+		maxValue = b;
+	}
+	if (maxValue < c) {
+		maxValue = c;
+	}
+	// Hiển số lớn nhất trong 3 số đầu vào
+	printf("%d\n", maxValue);
+}
+
+int main() {
+	// Gọi hàm show với giá trị của các đầu vào là a = 4, b = 6, c = 3 
+	show(4, 6, 3);
+	// Gọi hàm show với giá trị của các đầu vào là a = 2, b = 1, c = 5 
+	show(2, 1, 5);
+	// Gọi hàm show với giá trị của các đầu vào là a = 3, b = 3, c = 3 
+	show(3, 3, 3);
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+6
+5
+3
+Có thể thấy khi gọi hàm show(); bạn cần truyền giá trị cho 3 đầu vào.

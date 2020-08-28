@@ -1,0 +1,78 @@
+LÝ THUYẾT
+
+Hàm được hiểu đơn giản là 1 đoạn code, khi bạn gọi hàm thì thực ra là bạn đang gọi tới đoạn code này 
+(bạn cũng có thể hiểu hàm là viết tắt của 1 đoạn code). 
+Cách khai báo và sử dụng hàm rất đơn giản, trước hết bạn hãy xem một vài ví dụ về hàm:
+
+Ví dụ về hàm hiển thị ra các số từ 1 tới 10:
+
+#include<stdio.h>
+
+// Khai báo hàm show
+void show() {
+	// Hiển thị ra màn hình các số từ 1 đến 10
+	for (int i = 1; i <= 10; i++) {
+		printf("%d ", i);
+	}
+}
+
+int main() {
+	// Gọi hàm show
+	show();
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+1 2 3 4 5 6 7 8 9 10
+Ví dụ về hàm hiển thị ra bảng chữ cái tiếng anh:
+
+#include<stdio.h>
+
+// Khai báo hàm show
+void show() {
+	// Hiển thị bảng chữ cái tiếng anh ra màn hình
+	for (char c = 'A'; c <= 'Z'; c++) {
+		printf("%c", c);
+	}
+}
+
+int main() {
+	// Gọi hàm show
+	show();
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Như đã nói ở trên, việc bạn gọi hàm thực ra là bạn đang gọi tới đoạn code bên trong hàm 
+nên bạn có thể hiển thị ra 2 bảng chữ cái bằng cách gọi hàm 2 lần:
+
+#include<stdio.h>
+
+// Khai báo hàm show
+void show() {
+	// Hiển thị bảng chữ cái tiếng anh ra màn hình
+	for (char c = 'A'; c <= 'Z'; c++) {
+		printf("%c", c);
+	}
+}
+
+int main() {
+	// Gọi hàm show
+	show();
+	show();
+	return 0;
+}
+Kết quả khi chạy chương trình:
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Tới đây chắc bạn cũng đã hiểu cách tạo và sử dụng hàm, cú pháp để khai báo hàm sẽ trông giống như sau:
+
+void tên_hàm() {
+	/*
+	Khối lệnh bên trong thân hàm
+	Khối lệnh này sẽ được thực thi khi bạn gọi hàm
+	*/
+}
+Để sử dụng hàm bạn chỉ đơn giản là gọi tới tên_hàm();

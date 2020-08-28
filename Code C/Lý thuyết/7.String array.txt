@@ -1,0 +1,65 @@
+LÝ THUYẾT
+
+Xâu bản chất là 1 mảng các ký tự được lưu trữ trên các ô nhớ liên tiếp và kết thúc bằng ký tự '\0', 
+bạn có thể khởi tạo giá trị cho xâu giống như cho mảng:
+
+char str[] = "abcd";
+char str[50] = "abcd";
+char str[] = {'a', 'b', 'c', 'd', '\0'};
+char str[5] = {'a', 'b', 'c', 'd', '\0'};
+Để nhập dữ liệu và hiển thị một xâu ra màn hình bạn dùng định dạng %s giống như chương trình sau sau:
+
+#include<stdio.h>
+
+int main() {
+	// Khai báo xâu str, xâu str lưu trữ được 99 phần tử
+	char str[100];
+	// Nhập dữ liệu vào xâu str
+	scanf("%s", str);
+	// Hiển thị xâu str ra màn hình
+	printf("%s", str);
+	return 0;
+}
+Đoạn code trên tạo ra xâu str lưu trữ được 99 ký tự (không phải là 100 do ký tự cuối cùng của một xâu luôn là '\0'), 
+nhập dữ liệu cho xâu str và hiển thị xâu này ra màn hình.
+
+Lưu ý: Khi nhập dữ liệu cho xâu thì không sử dụng toán tử & trong hàm scanf().
+
+
+SO SÁNH 2 STRING TRONG ARRAY
+Bạn không thể sử dụng toán tử == để kiểm tra 2 xâu có giống nhau hay không 
+vì nếu áp dụng toán tử này lên 2 xâu thì đó là phép so sánh địa chỉ của phần tử đầu tiên của 2 xâu. Cụ thể hơn chương trình sau:
+
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    char str1[] = "coding";
+    char str2[] = "coding";
+    if (str1 == str2) {
+        printf("str1 is equal to str2");
+    } else {
+        printf("str1 is not equal to str2");
+    }
+    return 0;
+}
+Sẽ hiển thị lên màn hình:
+
+str1 is not equal to str2
+Để kiểm tra xem 2 xâu có giống nhau hay không bạn có thể dùng hàm strcmp() trong thư viện string.h. 
+Hàm này sẽ trả về 0 nếu 2 xâu giống nhau, ngược lại hàm này sẽ trả về một số khác 0 nếu 2 xâu khác nhau. Ví dụ chương trình sau:
+
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+    char str1[] = "coding";
+    char str2[] = "coding";
+    char str3[] = "codelearn.io";
+    printf("%d %d", strcmp(str1, str2), strcmp(str1, str3));
+    return 0;
+}
+Kết quả khi chạy chương trình:
+
+0 1
+Đọc tới đây bạn đã biết cách sử dụng hàm strcmp() và đã có thể làm được bài nay.

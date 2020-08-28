@@ -1,0 +1,36 @@
+LÝ THUYẾT
+Recursive Functions (Hàm đệ quy)
+Hàm đệ quy là hàm mà gọi tới chính nó, ví dụ một hàm đệ quy sẽ trông giống như sau:
+
+void recurse() {
+    ...
+    recurse();
+    ...
+}
+Do tính chất tự gọi lại chính nó nên để tránh việc hàm đệ quy chạy không bao giờ dừng bạn luôn cần có điểm dừng (điểm dừng được hiểu đơn giản là tới 1 lúc nào đó, hàm đệ quy sẽ không gọi lại chính nó nữa).
+
+Mô tả hàm đệ quy tính 5!:
+
+factorial(5)
+= 5 * factorial(4)
+= 5 * 4 * factorial(3)
+= 5 * 4 * 3 * factorial(2)
+= 5 * 4 * 3 * 2 * factorial(1)
+= 5 * 4 * 3 * 2 * 1
+= 120
+Điểm dừng ở ví dụ trên chính là khi đầu vào của hàm factorial bằng 1 thì hàm factorial sẽ trả về 1 thay vì gọi tiếp tới chính nó.
+
+Cụ thể hơn xem ví dụ về hàm đệ quy tính tổng các số từ 1 tới n:
+
+#include<stdio.h>
+
+int sumOfArray(int n) {
+    if (n == 0) return 0;
+    return n + sumOfArray(n - 1);
+}
+
+int main() {
+    printf("%d", sumOfArray(10));
+    return 0;
+}
+Điểm dừng ở đây chính là khi n = 0 thì hàm sumOfArray trả về 0 thay vì gọi tiếp tới chính nó.
