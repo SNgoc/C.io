@@ -1,27 +1,30 @@
-// Code mau Structures
+// Code mau cau truc mang, xep theo gia tang dan
 #include<stdio.h>
 #include<conio.h>
+
+struct book // chuyen cau truc cho ham khac thi phai khai bao ra ngoai ham main()
+{
+	int id;
+	char name[10];
+	double price;
+};
+int i,j,n; // Bien global (dung chung cho nhieu ham) (i,j dung cho loop; n la size of array)
 int main()
 {
-	struct product {
-		char name[10];
-		int quan;
-		double price;
-	}pro1;
-	void display(struct product);
-	printf("\nEnter a name: ");
-	scanf("%s",pro1.name);
-	printf("\nEnter a quantity: ");
-	scanf("%d",&pro1.quan);
-	printf("\nEnter a price: ");
-	scanf("%lf",&pro1.price);
-	display(pro1);
-	printf("\nFinished\n");
+	printf("Enter a size of array: ");
+	scanf("%d",&n);
+	struct book arrB[n];
+	printf("\nInput for array: ");
+	for (i=0; i<n; i++) 
+	{
+		printf("\nEnter an id: ");
+		scanf("%d",&arrB[i].id); //bien id cua phan tu thu i trong array
+		fflush(stdin);
+		printf("\nEnter a name: ");
+		gets(arrB[i].name);
+		printf("\nEnter a price: ");
+		scanf("%lf",&arrB[i].id);
+		printf("\n");
+	}
 }
-void display(struct product pd1) 
-{//khai bao mau ham
-	printf("\nInformation of Product 1\n");
-	printf("\nName of product: %s",pd1.name);
-	printf("\nQuantity of product: %d",pd1.quan);
-	printf("\nPrice of product: %.2lf\n",pd1.price);
-}
+
