@@ -1,30 +1,86 @@
-// Code mau cau truc mang, xep theo gia tang dan
+// Code mau pointer
 #include<stdio.h>
 #include<conio.h>
+#include<stdlib.h>
+#include<string.h>
 
-struct book // chuyen cau truc cho ham khac thi phai khai bao ra ngoai ham main()
+int main() 
 {
+	void quest1();
+	void quest2();
+	printf("****************************************************\n");
+	printf("*    Selecting appropriate action:              *\n");
+	printf("*    1. Question 1                              *\n");
+	printf("*    2. Question 2                              *\n");
+	printf("*    3. Quit program                            *\n");
+	printf("****************************************************\n");
+	printf("\n\n");
+	while (1) {
+		int cmd;
+		printf ("\nEnter an Option: ");
+		fflush(stdin);
+		scanf("%d",&cmd);
+		switch (cmd) {
+			case 1:
+				quest1();
+				break;
+			case 2: 
+				quest2();
+				break;
+			case 3:
+				printf("\nQuit!!!");
+				exit(0);
+			default:
+				printf("Invalid!!!\n");
+		}
+	}	
+}
+void quest1() 
+{
+	int i,n;
+	printf("Enter an integer number: ");
+	scanf("%d",&n);
+	printf("Cac uoc cua %d:\n",n);
+	for (i=1; i<n; i++)
+	{
+		if (n%i == 0) // i la so bi chia, duoc n chia het
+		{
+			printf("%d\t",i);
+		}
+	}
+	printf("\n");
+}
+struct student {
 	int id;
-	char name[10];
-	double price;
+	char name[100];
+	double mark;
 };
-int i,j,n; // Bien global (dung chung cho nhieu ham) (i,j dung cho loop; n la size of array)
-int main()
+void quest2() 
 {
+	int i,n;
 	printf("Enter a size of array: ");
 	scanf("%d",&n);
-	struct book arrB[n];
-	printf("\nInput for array: ");
-	for (i=0; i<n; i++) 
+	struct student arrS[n];
+	printf("\nEnter a date of student");
+	for(i=0; i<n; i++)
 	{
+		printf("\nEnter information of Student[%d]",i);
 		printf("\nEnter an id: ");
-		scanf("%d",&arrB[i].id); //bien id cua phan tu thu i trong array
-		fflush(stdin);
+		scanf("%d",&arrS[i].id);
 		printf("\nEnter a name: ");
-		gets(arrB[i].name);
-		printf("\nEnter a price: ");
-		scanf("%lf",&arrB[i].id);
-		printf("\n");
+		fflush(stdin);
+		gets(arrS[i].name);
+		printf("\nEnter a mark: ");
+		scanf("%lf",&arrS[i].mark);
+	}
+	printf("\nDisplay student, which have mark in range (40-60):\n");
+	for (i=0; i<n; i++)
+	{
+		if (arrS[i].mark >=40 && arrS[i].mark <= 60)
+		{
+			printf("ID: %d\n",arrS[i].id);
+			printf("Name: %s\n",arrS[i].name);
+			printf("Mark: %.2lf\n",arrS[i].mark);
+		}
 	}
 }
-

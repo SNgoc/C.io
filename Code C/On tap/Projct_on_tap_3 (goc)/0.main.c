@@ -4,7 +4,7 @@
 #include<string.h>
 #include<stdlib.h>
 int main() {
-	while (0<1) {
+	while (1) {
 		int cmd;
 		display();
 		printf ("\nEnter an Option: ");
