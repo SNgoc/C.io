@@ -1,86 +1,71 @@
-// Code mau pointer
+// Viet chuong trinh nhap so cong van den va xuat ra so cong van bat ky khi duoc yeu cau
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
 #include<string.h>
+struct CVden {
+		int soCV;
+		char tenCV[1000];
+		int ngay, thang, nam;
+		char gui[1000];
+		char nhan[1000];
+	}arrCV[2500];
 
-int main() 
+void VBden()
 {
-	void quest1();
-	void quest2();
-	printf("****************************************************\n");
-	printf("*    Selecting appropriate action:              *\n");
-	printf("*    1. Question 1                              *\n");
-	printf("*    2. Question 2                              *\n");
-	printf("*    3. Quit program                            *\n");
-	printf("****************************************************\n");
-	printf("\n\n");
-	while (1) {
-		int cmd;
-		printf ("\nEnter an Option: ");
+	int i = 1;
+	for (i=1; i <= 300; i++)
+	{
+		printf("Nhap so CV den: ");
+		scanf("%d",&arrCV[i].soCV);
+		printf("\nNhap ten CV: ");
 		fflush(stdin);
-		scanf("%d",&cmd);
-		switch (cmd) {
-			case 1:
-				quest1();
-				break;
-			case 2: 
-				quest2();
-				break;
-			case 3:
-				printf("\nQuit!!!");
-				exit(0);
-			default:
-				printf("Invalid!!!\n");
-		}
-	}	
-}
-void quest1() 
-{
-	int i,n;
-	printf("Enter an integer number: ");
-	scanf("%d",&n);
-	printf("Cac uoc cua %d:\n",n);
-	for (i=1; i<n; i++)
-	{
-		if (n%i == 0) // i la so bi chia, duoc n chia het
-		{
-			printf("%d\t",i);
-		}
-	}
-	printf("\n");
-}
-struct student {
-	int id;
-	char name[100];
-	double mark;
-};
-void quest2() 
-{
-	int i,n;
-	printf("Enter a size of array: ");
-	scanf("%d",&n);
-	struct student arrS[n];
-	printf("\nEnter a date of student");
-	for(i=0; i<n; i++)
-	{
-		printf("\nEnter information of Student[%d]",i);
-		printf("\nEnter an id: ");
-		scanf("%d",&arrS[i].id);
-		printf("\nEnter a name: ");
+		gets(arrCV[i].tenCV);
+		printf("\nNhap ngay, thang, nam: ");
+		scanf("%d %d %d",&arrCV[i].ngay,&arrCV[i].thang,&arrCV[i].nam);
+		printf("\nNhap noi gui: ");
 		fflush(stdin);
-		gets(arrS[i].name);
-		printf("\nEnter a mark: ");
-		scanf("%lf",&arrS[i].mark);
-	}
-	printf("\nDisplay student, which have mark in range (40-60):\n");
-	for (i=0; i<n; i++)
-	{
-		if (arrS[i].mark >=40 && arrS[i].mark <= 60)
+		gets(arrCV[i].gui);
+		printf("\nNhap noi nhan: ");
+		fflush(stdin);
+		gets(arrCV[i].nhan);
+		printf("\nContinue: Y/N?\n");
+		char cmd = getchar();
+		if (cmd == 'Y' || cmd == 'y')
 		{
-			printf("ID: %d\n",arrS[i].id);
-			printf("Name: %s\n",arrS[i].name);
-			printf("Mark: %.2lf\n",arrS[i].mark);
+			continue;
+		}
+		else if (cmd == 'N' || cmd == 'n')
+		{
+			break;
 		}
 	}
+	int checkso;
+	while (1)
+	{
+		printf("\nNhap so CV de check thong tin (nhap 0 de exit): ");
+		scanf("%d",&checkso);
+		if (checkso == 0) {
+			printf("\nExit!!!");
+			exit(0);
+		}
+		for (i=1; i <= 301; i++)
+		{
+			if (checkso == arrCV[i].soCV) {
+				printf("\nSo CV: %d \nTen CV: %s \nNgay/Thang/Nam: %d/%d/%d",arrCV[i].soCV,arrCV[i].tenCV,arrCV[i].ngay,arrCV[i].thang,arrCV[i].nam);
+				printf("\nNoi gui: %s",arrCV[i].gui);
+				printf("\nNoi nhan: %s",arrCV[i].nhan);
+				break;
+			}
+			else if ( i == 301) {
+				printf("\nSo CV nay khong ton tai!!!");
+				break;
+			}
+		}
+	}
+}
+
+int main () 
+{
+	VBden();
 }
