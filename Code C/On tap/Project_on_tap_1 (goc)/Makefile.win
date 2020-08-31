@@ -1,0 +1,40 @@
+# Project: On_tap_1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 0.main.o quest1_on_tap_1.o quest2_on_tap_2.o display.o quest3_on_tap_3.o
+LINKOBJ  = 0.main.o quest1_on_tap_1.o quest2_on_tap_2.o display.o quest3_on_tap_3.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = On_tap_1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+0.main.o: 0.main.c
+	$(CC) -c 0.main.c -o 0.main.o $(CFLAGS)
+
+quest1_on_tap_1.o: quest1_on_tap_1.c
+	$(CC) -c quest1_on_tap_1.c -o quest1_on_tap_1.o $(CFLAGS)
+
+quest2_on_tap_2.o: quest2_on_tap_2.c
+	$(CC) -c quest2_on_tap_2.c -o quest2_on_tap_2.o $(CFLAGS)
+
+display.o: display.c
+	$(CC) -c display.c -o display.o $(CFLAGS)
+
+quest3_on_tap_3.o: quest3_on_tap_3.c
+	$(CC) -c quest3_on_tap_3.c -o quest3_on_tap_3.o $(CFLAGS)

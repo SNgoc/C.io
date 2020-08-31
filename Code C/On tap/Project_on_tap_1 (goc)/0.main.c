@@ -1,4 +1,4 @@
-//On tap 3
+//On tap 1
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
@@ -18,6 +18,9 @@ int main() {
 				quest2();
 				break;
 			case 3:
+				quest3();
+				break;
+			case 4:
 				printf("\nQuit!!!");
 				exit(0);
 			default:
