@@ -23,7 +23,7 @@ int main()
 		printf("\nQuantity of product: %d\n",arrPro[i].quan);
 		printf("\nPrice of product: %.3f\n",arrPro[i].price);
 	}
-	//HIEN THEO GIA TANG DAN
+	//HIEN THEO GIA LON NHAT
 	
 	temp = arrPro[0];
 	for (i=1; i<3; i++) {

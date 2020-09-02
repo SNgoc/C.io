@@ -39,7 +39,7 @@ void xep(struct book arr[])
 	{
 		for (j=i+1; j<n; j++)
 		{
-			if (arr[i].price > arr[j].price)
+			if (arr[i].price > arr[j].price)//Thuat toan hien theo gia tang dan
 			{
 				temp = arr[i];
 				arr[i] = arr[j];
