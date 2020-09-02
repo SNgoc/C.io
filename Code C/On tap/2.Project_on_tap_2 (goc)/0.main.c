@@ -1,4 +1,4 @@
-//On tap 1
+//On tap 2
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>

@@ -1,6 +1,6 @@
 [Project]
-FileName=Project_test.dev
-Name=Project_test
+FileName=On_tap_2 (BT).dev
+Name=On_tap_2 (BT)
 Type=1
 Ver=2
 ObjFiles=
@@ -19,7 +19,7 @@ ObjectOutput=
 LogOutput=
 LogOutputEnabled=0
 OverrideOutput=0
-OverrideOutputName=On_tap_3.exe
+OverrideOutputName=
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
@@ -39,14 +39,14 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=1.0.0.0
+FileVersion=
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=1.0.0.0
+ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
