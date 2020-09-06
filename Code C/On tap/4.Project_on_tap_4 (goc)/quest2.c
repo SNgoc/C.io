@@ -46,7 +46,7 @@ void quest2()
 			printf("ID: %d\n",arrS[i].id);
 			printf("Name: %s\n",arrS[i].name);
 			printf("Mark: %.2lf\n",arrS[i].mark);
-			break;
+			return;
 		}
 	}
 	printf("The ID don't exist!!!\n");
