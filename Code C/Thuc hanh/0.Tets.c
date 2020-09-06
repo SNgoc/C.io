@@ -3,69 +3,40 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<string.h>
-struct CVden {
-		int soCV;
-		char tenCV[1000];
-		int ngay, thang, nam;
-		char gui[1000];
-		char nhan[1000];
-	}arrCV[2500];
-
-void VBden()
-{
-	int i = 1;
-	for (i=1; i <= 300; i++)
+int main() {
+	struct employee {
+		int empID;
+		char empName[100];
+		int salary, allowance;
+		int totalsalary;
+	}arrE[100];
+	int numE,i;
+	printf("Enter the number of employees: ");
+	scanf("%d",&numE);
+	for (i=1; i<=numE; i++) 
 	{
-		printf("Nhap so CV den: ");
-		scanf("%d",&arrCV[i].soCV);
-		printf("\nNhap ten CV: ");
+		printf("\nEnter information employees %d:\n",i);
 		fflush(stdin);
-		gets(arrCV[i].tenCV);
-		printf("\nNhap ngay, thang, nam: ");
-		scanf("%d %d %d",&arrCV[i].ngay,&arrCV[i].thang,&arrCV[i].nam);
-		printf("\nNhap noi gui: ");
+		printf("Input ID: ");
+		scanf("%d",&arrE[i].empID);
+		printf("Input Name: ");
 		fflush(stdin);
-		gets(arrCV[i].gui);
-		printf("\nNhap noi nhan: ");
-		fflush(stdin);
-		gets(arrCV[i].nhan);
-		printf("\nContinue: Y/N?\n");
-		char cmd = getchar();
-		if (cmd == 'Y' || cmd == 'y')
-		{
-			continue;
-		}
-		else if (cmd == 'N' || cmd == 'n')
-		{
-			break;
-		}
+		gets(arrE[i].empName);
+		printf("Input Salary: ");
+		scanf("%d",&arrE[i].salary);
+		printf("Input Allowance: ");
+		scanf("%d",&arrE[i].allowance);
 	}
-	int checkso;
-	while (1)
+	//Yeu cau 2
+	printf("\n---------------------Employee Details---------------------\n");
+	printf("ID \tName \t\t\t\tSalary \tAllowance \tTotal Salary\n");
+	for (i=1; i<=numE; i++)  
 	{
-		printf("\nNhap so CV de check thong tin (nhap 0 de exit): ");
-		scanf("%d",&checkso);
-		if (checkso == 0) {
-			printf("\nExit!!!");
-			exit(0);
-		}
-		for (i=1; i <= 301; i++)
-		{
-			if (checkso == arrCV[i].soCV) {
-				printf("\nSo CV: %d \nTen CV: %s \nNgay/Thang/Nam: %d/%d/%d",arrCV[i].soCV,arrCV[i].tenCV,arrCV[i].ngay,arrCV[i].thang,arrCV[i].nam);
-				printf("\nNoi gui: %s",arrCV[i].gui);
-				printf("\nNoi nhan: %s",arrCV[i].nhan);
-				break;
-			}
-			else if ( i == 301) {
-				printf("\nSo CV nay khong ton tai!!!");
-				break;
-			}
-		}
+		arrE[i].totalsalary = arrE[i].salary + arrE[i].allowance;
+		printf("\r%d",arrE[i].empID);// \r de can le tr, \t phai printf tung phan de can dong
+		printf("\t%-20s",arrE[i].empName);// %-20s de can le phai
+		printf("\t%d",arrE[i].salary);
+		printf("\t%d",arrE[i].allowance);
+		printf("\t%d\n",arrE[i].totalsalary);
 	}
-}
-
-int main () 
-{
-	VBden();
 }
