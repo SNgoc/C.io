@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=6
+UnitCount=4
 
 [VersionInfo]
 Major=1
@@ -71,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=quest1_on_tap_2.c
+FileName=quest1_test.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -81,17 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=quest2_on_tap_2.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
-FileName=quest3_on_tap_2.c
+FileName=quest2_test.c
 CompileCpp=0
 Folder=
 Compile=1
@@ -101,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=quest4_on_tap_2.c
+FileName=quest4_test.c
 CompileCpp=0
 Folder=
 Compile=1

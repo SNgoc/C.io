@@ -18,12 +18,6 @@ int main() {
 				quest2();
 				break;
 			case 3:
-				quest3();
-				break;
-			case 4:
-				quest4();
-				break;
-			case 5:
 				printf("\nQuit!!!");
 				exit(0);
 			default:
