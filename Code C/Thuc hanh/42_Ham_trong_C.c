@@ -68,11 +68,11 @@ void display()
 	}
 }
 
-//Question 1 Fibonacci series (1,1,2,3,5….)
+//Question 1 Fibonacci series (1,1,2,3,5ï¿½.)
 void quest1() {
 	int fibo,a,b;
 	a = 1;
-	a = b;
+	b = a;
 	printf("Enter a num to print Fibonacci: ");
 	scanf("%d",&fibo);
 	fflush(stdin);
@@ -157,6 +157,7 @@ int main() {
 		display();
 		printf ("\nEnter an Option:\n"); // them \n sau cau de sua loi bug quest1() khong tinh duoc fibo
 		scanf("%d",&cmd);
+        fflush(stdin);
 		switch (cmd) {
 			case 1:
 				quest1();
