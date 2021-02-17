@@ -1,12 +1,20 @@
 // Test ly thuyet
 #include <stdio.h>
 #include <conio.h>
-main()
-{	int i=0, x=0;
-	while ( i < 20)
-	{	if (i%5==0)
-		x = x+i;
-		++i;  }
-		printf("%d",x);
+
+main() {
+	int n, k , x;
+	scanf("%d",&n);
+	int i;
+	int arr[n];
+	for (i = 1; i<=n; i++) {
+		scanf("%d",&arr[i]);
+	}
+	printf("Nhap k: "); //(0 <= k <= n)
+	fflush(stdin);
+	scanf("%d",&k);
+	printf("Nhap x: ");
+	fflush(stdin);
+	scanf("%d",x);
 }
 
